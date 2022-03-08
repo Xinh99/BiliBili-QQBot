@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Xinh.QQbot.BiliBiliUpInfo.DAO.UpInfoMapper">
+
+    <select id="getUpInfo" resultType="UpInfo">
+        select * from upinfo
+    </select>
+
+    <insert id="insertUpInfo" parameterType="UpInfo">
+        insert into upinfo values (#{uid}, #{upname}, #{updatetime}, #{livestate})
+    </insert>
+
+    <update id="updateUpInfo">
+        update upinfo set updatetime = #{updatetime}, livestate = #{livestate} where uid = #{uid}
+    </update>
+
+    <delete id="deleteUpInfo">
+        delete from upinfo where uid = #{uid}
+    </delete>
+
+
+</mapper>
